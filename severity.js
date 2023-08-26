@@ -1,24 +1,23 @@
 const { OpenAI } = require("openai");
 
-const openai = new OpenAI({ apiKey: "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" });
+const openai = new OpenAI({ apiKey: "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" });
 
-
-const age=30;
-const gender=male;
-const request="runny nose";
-
-const problem = "age is ${age} , gender is ${gender} and the patients symptoms are ${request}";
+const request="runny nose ";
 
 
 const pro=`
-example="got a paper cut-20","fell of the bike for a deep cut-50","having difficulty breathing and having heavy chest-89",
-Do this for the statement:${problem} .Calculate a number from  severity scale from 0 to 100 where 0 is not at all severe and 100 is maximum severe also consider age as a factor while assignig the number .just give a number as output
+{example="got a paper cut-20","fell of the bike for a deep cut-50","having difficulty breathing and having heavy chest-89",}
+step 1: Do this for the statement:${request} .Calculate a number from  severity scale from 0 to 100 where 0 is not at all severe and 100 is maximum severe also consider age as a factor while assignig the number .just give a number as output
+step 2: if score is more then 60, then output one of :(Cardiologist,Dermatologist,Neurologist,Endocrinologist,Orthopedic) if the score is less then 60 , output :"ONLINE"
+
+
 `;
 
 async function abhishek() {
   const response = await openai.completions.create({
     prompt: pro,
     model: "text-davinci-003",
+    max_tokens: 100, 
   });
 
   // Extract the output text from the response
@@ -27,7 +26,7 @@ async function abhishek() {
   console.log(outputText);
   // return outputText;
 }
-
+abhishek()
 // async function main() {
 //   const result = await abhishek(); // Call the abhishek function and store the returned value in 'result'
 //   const new_resp=await openai.completions.create({
@@ -41,5 +40,4 @@ async function abhishek() {
 
   
 // }
-abhishek()
 // main();

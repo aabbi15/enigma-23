@@ -1,0 +1,44 @@
+{
+    "data": [
+        {
+            "text": "I have been vomiting intermittently, but it's not severe.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I woke up with a mild fever and chills.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I had a few episodes of vomiting, but it stopped now.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I've been feeling nauseous, but I haven't vomited yet.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I have a high fever, and it's not coming down with medication.",
+            "severity": "severe"
+        },
+        {
+            "text": "I vomited multiple times, and I'm feeling very weak.",
+            "severity": "severe"
+        },
+        {
+            "text": "I have a persistent fever, and my body aches all over.",
+            "severity": "severe"
+        },
+        {
+            "text": "I vomited after eating something spoiled, and I have diarrhea too.",
+            "severity": "severe"
+        },
+        {
+            "text": "I have a low-grade fever, and it's been there for a few days.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I vomited once, but now I'm feeling better.",
+            "severity": "not severe"
+        }
+    ]
+}

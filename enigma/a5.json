@@ -1,0 +1,44 @@
+{
+    "data": [
+        {
+            "text": "I've been experiencing a mild discomfort in my chest, but it comes and goes.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I feel a slight pressure in my chest; it's not too severe, though.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I have occasional heart palpitations, but they are not severe or prolonged.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I woke up with a sharp chest pain on my left side; it's quite severe.",
+            "severity": "severe"
+        },
+        {
+            "text": "I've been having a persistent, heavy feeling in my chest; it's concerning.",
+            "severity": "severe"
+        },
+        {
+            "text": "I experienced a sudden and severe chest pain radiating to my arm; it's alarming.",
+            "severity": "severe"
+        },
+        {
+            "text": "I have mild chest discomfort after a heavy meal; it's not too severe.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I feel like my heart is racing, and there's a tightness in my chest; it's worrying.",
+            "severity": "severe"
+        },
+        {
+            "text": "I've been having occasional chest pains, but they are usually brief and not severe.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I have a constant, severe chest pain; it's been ongoing for hours.",
+            "severity": "severe"
+        }
+    ]
+}

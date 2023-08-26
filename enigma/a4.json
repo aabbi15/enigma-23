@@ -1,0 +1,44 @@
+{
+    "data": [
+        {
+            "text": "I have a mild rash on my arms; it's not severe.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I noticed some redness and itching on my skin, but it's not too severe.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I have a few small pimples on my face; it's not a severe breakout.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I've been experiencing dry and itchy skin, but it's manageable.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I have a severe allergic reaction with hives all over my body.",
+            "severity": "severe"
+        },
+        {
+            "text": "I developed a large and painful boil on my thigh; it's very severe.",
+            "severity": "severe"
+        },
+        {
+            "text": "I have a persistent rash with blisters; it's causing a lot of discomfort.",
+            "severity": "severe"
+        },
+        {
+            "text": "I noticed a severe skin discoloration on my face; it's quite alarming.",
+            "severity": "severe"
+        },
+        {
+            "text": "I have a mild case of eczema on my hands; it's not too severe yet.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I woke up with a severe skin infection on my leg; it's red and swollen.",
+            "severity": "severe"
+        }
+    ]
+}

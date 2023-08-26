@@ -1,0 +1,44 @@
+{
+    "data": [
+        {
+            "text": "I have a mild stomachache after eating too quickly; it's not too severe.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I've been experiencing occasional stomach discomfort, but it's not too severe.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I have mild indigestion after a heavy meal; it's not severe.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I woke up with severe abdominal cramps and diarrhea; it's very severe.",
+            "severity": "severe"
+        },
+        {
+            "text": "I've been having persistent and severe acid reflux; it's very uncomfortable.",
+            "severity": "severe"
+        },
+        {
+            "text": "I experienced sudden and severe nausea and vomiting; it's distressing.",
+            "severity": "severe"
+        },
+        {
+            "text": "I feel mild bloating and gas after certain foods; it's not too severe.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I have severe abdominal pain that's been ongoing for hours; it's excruciating.",
+            "severity": "severe"
+        },
+        {
+            "text": "I've been experiencing occasional stomach cramps, but they are usually brief and not severe.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I have a persistent and severe upset stomach; it's been affecting my appetite.",
+            "severity": "severe"
+        }
+    ]
+}

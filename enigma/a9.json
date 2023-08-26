@@ -1,0 +1,44 @@
+{
+    "data": [
+        {
+            "text": "I have mild joint pain in my knees after a long walk; it's not too severe.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I've been experiencing occasional joint stiffness, but it's not too severe.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I have mild pain in my wrist joint when I twist it; it's not severe.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I woke up with a severe and throbbing joint pain in my elbow; it's very severe.",
+            "severity": "severe"
+        },
+        {
+            "text": "I've been having persistent and severe joint pain in my hips; it's very uncomfortable.",
+            "severity": "severe"
+        },
+        {
+            "text": "I experienced sudden and severe joint inflammation in my fingers; it's painful.",
+            "severity": "severe"
+        },
+        {
+            "text": "I feel mild joint discomfort in my ankles after a workout; it's not too severe.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I have severe joint pain in my knees that's been getting worse; it's very painful.",
+            "severity": "severe"
+        },
+        {
+            "text": "I've been having occasional joint pain in my shoulders, but it's not too severe.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I have a persistent and severe joint pain in my lower back; it's debilitating.",
+            "severity": "severe"
+        }
+    ]
+}

@@ -1,0 +1,44 @@
+{
+    "data": [
+        {
+            "text": "I've been feeling mild joint stiffness in my fingers during the mornings; it's not severe.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I have occasional joint pain in my knees after exercise, but it usually subsides quickly; it's not too severe.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I noticed mild joint swelling in my wrists, but it's not causing significant discomfort.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I experienced sharp and severe joint pain in my shoulder after lifting a heavy object; it's very painful.",
+            "severity": "severe"
+        },
+        {
+            "text": "I've been having constant and severe joint pain in my ankles; it's limiting my mobility.",
+            "severity": "severe"
+        },
+        {
+            "text": "I have a persistent and severe joint pain in my fingers, making it difficult to grip objects.",
+            "severity": "severe"
+        },
+        {
+            "text": "I feel mild joint discomfort in my hips after a long day of sitting; it's not too severe.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I have severe joint pain in my back, and it's radiating down my legs; it's excruciating.",
+            "severity": "severe"
+        },
+        {
+            "text": "I've been experiencing occasional joint pain in my toes; it's not too severe, but it's bothersome.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I have severe joint pain in my wrists that has been ongoing for weeks; it's very uncomfortable.",
+            "severity": "severe"
+        }
+    ]
+}

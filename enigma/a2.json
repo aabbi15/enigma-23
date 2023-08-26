@@ -1,0 +1,52 @@
+{
+    "data": [
+        {
+            "text": "I have a runny nose and sneezing.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I got a paper cut on my finger.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I have a mild stomachache after eating too quickly.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I bumped my knee against a table, and it's bruised.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I have a deep splinter in my hand that's causing pain.",
+            "severity": "severe"
+        },
+        {
+            "text": "I fell while hiking and twisted my ankle; it's swollen.",
+            "severity": "severe"
+        },
+        {
+            "text": "I have a persistent high fever, chills, and body aches.",
+            "severity": "severe"
+        },
+        {
+            "text": "I have a minor headache from staying up late.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I accidentally touched a hot stove, and my finger is burned.",
+            "severity": "severe"
+        },
+        {
+            "text": "I have a mild cough and sore throat.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I have a mosquito bite that's itchy and swollen.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I have a deep cut on my hand from a kitchen knife.",
+            "severity": "severe"
+        }
+    ]
+}

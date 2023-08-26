@@ -1,0 +1,45 @@
+{
+    "data": [
+        {
+            "text": "I've been having mild stomach cramps after certain meals; it's not too severe.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I experience occasional bloating and gas, but it usually resolves quickly; it's not too severe.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I have mild heartburn after eating spicy foods; it's not too severe.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I woke up with severe abdominal pain and vomiting; it's very severe.",
+            "severity": "severe"
+        },
+        {
+            "text": "I've been dealing with persistent and severe constipation; it's very uncomfortable.",
+            "severity": "severe"
+        },
+        {
+            "text": "I experienced sudden and severe diarrhea and dehydration; it's distressing.",
+            "severity": "severe"
+        },
+        {
+            "text": "I feel mild discomfort and pressure in my stomach after a heavy meal; it's not too severe.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I have severe abdominal cramps that have been ongoing for days; it's excruciating.",
+            "severity": "severe"
+        },
+        {
+            "text": "I've been having occasional stomachaches, but they are usually brief and not severe.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I have a persistent and severe upset stomach with nausea; it's affecting my daily activities.",
+            "severity": "severe"
+        }
+    ]
+}
+

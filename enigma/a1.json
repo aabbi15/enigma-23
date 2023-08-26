@@ -1,0 +1,36 @@
+{
+    "data": [
+        {
+            "text": "I have a mild fever and a slight cough.",
+            "severity": "not severe"
+        },
+        {
+            "text": "My allergies are acting up, and my eyes are itchy.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I twisted my ankle while running, and it's swollen.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I have a persistent sore throat and difficulty swallowing.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I accidentally touched a hot pan, and my hand is burnt.",
+            "severity": "severe"
+        },
+        {
+            "text": "I fell off my bike and have a deep cut on my knee.",
+            "severity": "severe"
+        },
+        {
+            "text": "I have a persistent headache, and the pain is getting worse.",
+            "severity": "severe"
+        },
+        {
+            "text": "My stomach hurts after eating spicy food.",
+            "severity": "not severe"
+        }
+    ]
+}

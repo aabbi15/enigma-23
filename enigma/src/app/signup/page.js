@@ -2,6 +2,13 @@
 
 import Header from '../header';
 import Footer from '../footer';
+import Image from 'next/image';
+import doctorfemale from '../../images/doctor-female.png';
+import lab from '../../images/lab.png';
+import patienthappy from '../../images/patient-happy.png';
+
+
+
 
 export default function Signup() {
 
@@ -44,7 +51,7 @@ export default function Signup() {
                 <div class="max-w-sm bg-white px-6 pt-6 pb-2 rounded-xl shadow-lg transform hover:scale-105 transition duration-500">
                     <h3 class="mb-3 text-xl font-bold text-indigo-600">Hospital Account</h3>
                     <div class="relative">
-                        <img class="w-full rounded-xl" src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="Colors" />
+                    <Image src={doctorfemale} className='rounded-xl'></Image>
                     </div>
                     <h1 class="mt-4 text-gray-800 text-2xl font-bold cursor-pointer">Create a new account for your Hospital!</h1>
                     <div class="my-4">
@@ -60,8 +67,7 @@ export default function Signup() {
                 <div class="max-w-sm bg-white px-6 pt-6 pb-2 rounded-xl shadow-lg transform hover:scale-105 transition duration-500">
                     <h3 class="mb-3 text-xl font-bold text-indigo-600">Patient Account</h3>
                     <div class="relative">
-                        <img class="w-full rounded-xl" src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="Colors" />
-                    </div>
+                    <Image src={patienthappy} className='rounded-xl'></Image>                    </div>
                     <h1 class="mt-4 text-gray-800 text-2xl font-bold cursor-pointer">Create a new Patient account for you!</h1>
                     <div class="my-4">
                     <div className='text-gray-700'>
@@ -76,8 +82,7 @@ export default function Signup() {
                 <div class="max-w-sm bg-white px-6 pt-6 pb-2 rounded-xl shadow-lg transform hover:scale-105 transition duration-500">
                     <h3 class="mb-3 text-xl font-bold text-indigo-600">Laboratory Account</h3>
                     <div class="relative">
-                        <img class="w-full rounded-xl" src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="Colors" />
-                    </div>
+                    <Image src={lab} className='rounded-xl'></Image>                    </div>
                     <h1 class="mt-4 text-gray-800 text-2xl font-bold cursor-pointer">Create a new account for your Lab!</h1>
                     <div class="my-4">
                     <div className='text-gray-700'>

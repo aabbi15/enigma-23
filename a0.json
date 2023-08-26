@@ -1,0 +1,447 @@
+{
+    "data": [
+        {
+            "text": "I've been having mild stomach cramps after certain meals; it's not too severe.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I experience occasional bloating and gas, but it usually resolves quickly; it's not too severe.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I have mild heartburn after eating spicy foods; it's not too severe.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I woke up with severe abdominal pain and vomiting; it's very severe.",
+            "severity": "severe"
+        },
+        {
+            "text": "I've been dealing with persistent and severe constipation; it's very uncomfortable.",
+            "severity": "severe"
+        },
+        {
+            "text": "I experienced sudden and severe diarrhea and dehydration; it's distressing.",
+            "severity": "severe"
+        },
+        {
+            "text": "I feel mild discomfort and pressure in my stomach after a heavy meal; it's not too severe.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I have severe abdominal cramps that have been ongoing for days; it's excruciating.",
+            "severity": "severe"
+        },
+        {
+            "text": "I've been having occasional stomachaches, but they are usually brief and not severe.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I have a persistent and severe upset stomach with nausea; it's affecting my daily activities.",
+            "severity": "severe"
+        },
+        {
+            "text": "I have a mild fever and a slight cough.",
+            "severity": "not severe"
+        },
+        {
+            "text": "My allergies are acting up, and my eyes are itchy.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I twisted my ankle while running, and it's swollen.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I have a persistent sore throat and difficulty swallowing.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I accidentally touched a hot pan, and my hand is burnt.",
+            "severity": "severe"
+        },
+        {
+            "text": "I fell off my bike and have a deep cut on my knee.",
+            "severity": "severe"
+        },
+        {
+            "text": "I have a persistent headache, and the pain is getting worse.",
+            "severity": "severe"
+        },
+        {
+            "text": "My stomach hurts after eating spicy food.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I have a runny nose and sneezing.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I got a paper cut on my finger.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I have a mild stomachache after eating too quickly.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I bumped my knee against a table, and it's bruised.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I have a deep splinter in my hand that's causing pain.",
+            "severity": "severe"
+        },
+        {
+            "text": "I fell while hiking and twisted my ankle; it's swollen.",
+            "severity": "severe"
+        },
+        {
+            "text": "I have a persistent high fever, chills, and body aches.",
+            "severity": "severe"
+        },
+        {
+            "text": "I have a minor headache from staying up late.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I accidentally touched a hot stove, and my finger is burned.",
+            "severity": "severe"
+        },
+        {
+            "text": "I have a mild cough and sore throat.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I have a mosquito bite that's itchy and swollen.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I have a deep cut on my hand from a kitchen knife.",
+            "severity": "severe"
+        },
+        {
+            "text": "I have been vomiting intermittently, but it's not severe.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I woke up with a mild fever and chills.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I had a few episodes of vomiting, but it stopped now.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I've been feeling nauseous, but I haven't vomited yet.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I have a high fever, and it's not coming down with medication.",
+            "severity": "severe"
+        },
+        {
+            "text": "I vomited multiple times, and I'm feeling very weak.",
+            "severity": "severe"
+        },
+        {
+            "text": "I have a persistent fever, and my body aches all over.",
+            "severity": "severe"
+        },
+        {
+            "text": "I vomited after eating something spoiled, and I have diarrhea too.",
+            "severity": "severe"
+        },
+        {
+            "text": "I have a low-grade fever, and it's been there for a few days.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I vomited once, but now I'm feeling better.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I have a mild rash on my arms; it's not severe.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I noticed some redness and itching on my skin, but it's not too severe.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I have a few small pimples on my face; it's not a severe breakout.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I've been experiencing dry and itchy skin, but it's manageable.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I have a severe allergic reaction with hives all over my body.",
+            "severity": "severe"
+        },
+        {
+            "text": "I developed a large and painful boil on my thigh; it's very severe.",
+            "severity": "severe"
+        },
+        {
+            "text": "I have a persistent rash with blisters; it's causing a lot of discomfort.",
+            "severity": "severe"
+        },
+        {
+            "text": "I noticed a severe skin discoloration on my face; it's quite alarming.",
+            "severity": "severe"
+        },
+        {
+            "text": "I have a mild case of eczema on my hands; it's not too severe yet.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I woke up with a severe skin infection on my leg; it's red and swollen.",
+            "severity": "severe"
+        },
+        {
+            "text": "I've been experiencing a mild discomfort in my chest, but it comes and goes.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I feel a slight pressure in my chest; it's not too severe, though.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I have occasional heart palpitations, but they are not severe or prolonged.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I woke up with a sharp chest pain on my left side; it's quite severe.",
+            "severity": "severe"
+        },
+        {
+            "text": "I've been having a persistent, heavy feeling in my chest; it's concerning.",
+            "severity": "severe"
+        },
+        {
+            "text": "I experienced a sudden and severe chest pain radiating to my arm; it's alarming.",
+            "severity": "severe"
+        },
+        {
+            "text": "I have mild chest discomfort after a heavy meal; it's not too severe.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I feel like my heart is racing, and there's a tightness in my chest; it's worrying.",
+            "severity": "severe"
+        },
+        {
+            "text": "I've been having occasional chest pains, but they are usually brief and not severe.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I have a constant, severe chest pain; it's been ongoing for hours.",
+            "severity": "severe"
+        },
+        {
+            "text": "I feel a mild discomfort in my chest when I take deep breaths; it's not too severe.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I've had a dull ache in my chest for a couple of days; it's not severe, but it's persistent.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I have occasional chest tightness, but it's usually brief and not severe.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I woke up in the middle of the night with a sharp chest pain; it was very severe, but it went away.",
+            "severity": "severe"
+        },
+        {
+            "text": "I've been experiencing a squeezing pain in my chest that radiates to my back; it's severe.",
+            "severity": "severe"
+        },
+        {
+            "text": "I felt a sudden and intense pressure in my chest, along with shortness of breath; it was very severe.",
+            "severity": "severe"
+        },
+        {
+            "text": "I get mild chest discomfort during stressful situations; it's not severe, but it's unsettling.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I have a sharp, stabbing pain in my chest every time I inhale deeply; it's severe.",
+            "severity": "severe"
+        },
+        {
+            "text": "I've been having mild chest pain along with dizziness; it's concerning but not severe.",
+            "severity": "not severe"
+        },
+        {
+            "text":"I experienced a sudden, crushing chest pain that felt like a weight on my chest; it was extremely severe.",
+            "severity": "severe"
+        },
+        {
+            "text": "I have mild joint pain in my knees after a long walk; it's not too severe.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I've been experiencing occasional joint stiffness, but it's not too severe.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I have mild pain in my wrist joint when I twist it; it's not severe.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I woke up with a severe and throbbing joint pain in my elbow; it's very severe.",
+            "severity": "severe"
+        },
+        {
+            "text": "I've been having persistent and severe joint pain in my hips; it's very uncomfortable.",
+            "severity": "severe"
+        },
+        {
+            "text": "I experienced sudden and severe joint inflammation in my fingers; it's painful.",
+            "severity": "severe"
+        },
+        {
+            "text": "I feel mild joint discomfort in my ankles after a workout; it's not too severe.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I have severe joint pain in my knees that's been getting worse; it's very painful.",
+            "severity": "severe"
+        },
+        {
+            "text": "I've been having occasional joint pain in my shoulders, but it's not too severe.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I have a persistent and severe joint pain in my lower back; it's debilitating.",
+            "severity": "severe"
+        },
+        {
+            "text": "I've been feeling mild joint stiffness in my fingers during the mornings; it's not severe.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I have occasional joint pain in my knees after exercise, but it usually subsides quickly; it's not too severe.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I noticed mild joint swelling in my wrists, but it's not causing significant discomfort.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I experienced sharp and severe joint pain in my shoulder after lifting a heavy object; it's very painful.",
+            "severity": "severe"
+        },
+        {
+            "text": "I've been having constant and severe joint pain in my ankles; it's limiting my mobility.",
+            "severity": "severe"
+        },
+        {
+            "text": "I have a persistent and severe joint pain in my fingers, making it difficult to grip objects.",
+            "severity": "severe"
+        },
+        {
+            "text": "I feel mild joint discomfort in my hips after a long day of sitting; it's not too severe.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I have severe joint pain in my back, and it's radiating down my legs; it's excruciating.",
+            "severity": "severe"
+        },
+        {
+            "text": "I've been experiencing occasional joint pain in my toes; it's not too severe, but it's bothersome.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I have severe joint pain in my wrists that has been ongoing for weeks; it's very uncomfortable.",
+            "severity": "severe"
+        },
+        {
+            "text": "I have mild joint pain in my knees after a long walk; it's not too severe.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I've been experiencing occasional joint stiffness, but it's not too severe.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I have mild pain in my wrist joint when I twist it; it's not severe.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I woke up with a severe and throbbing joint pain in my elbow; it's very severe.",
+            "severity": "severe"
+        },
+        {
+            "text": "I've been having persistent and severe joint pain in my hips; it's very uncomfortable.",
+            "severity": "severe"
+        },
+        {
+            "text": "I experienced sudden and severe joint inflammation in my fingers; it's painful.",
+            "severity": "severe"
+        },
+        {
+            "text": "I feel mild joint discomfort in my ankles after a workout; it's not too severe.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I have severe joint pain in my knees that's been getting worse; it's very painful.",
+            "severity": "severe"
+        },
+        {
+            "text": "I've been having occasional joint pain in my shoulders, but it's not too severe.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I have a persistent and severe joint pain in my lower back; it's debilitating.",
+            "severity": "severe"
+        },
+        {
+            "text": "I have a mild stomachache after eating too quickly; it's not too severe.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I've been experiencing occasional stomach discomfort, but it's not too severe.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I have mild indigestion after a heavy meal; it's not severe.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I woke up with severe abdominal cramps and diarrhea; it's very severe.",
+            "severity": "severe"
+        },
+        {
+            "text": "I've been having persistent and severe acid reflux; it's very uncomfortable.",
+            "severity": "severe"
+        },
+        {
+            "text": "I experienced sudden and severe nausea and vomiting; it's distressing.",
+            "severity": "severe"
+        },
+        {
+            "text": "I feel mild bloating and gas after certain foods; it's not too severe.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I have severe abdominal pain that's been ongoing for hours; it's excruciating.",
+            "severity": "severe"
+        },
+        {
+            "text": "I've been experiencing occasional stomach cramps, but they are usually brief and not severe.",
+            "severity": "not severe"
+        },
+        {
+            "text": "I have a persistent and severe upset stomach; it's been affecting my appetite.",
+            "severity": "severe"
+        }
+    ]
+}
+
+
+    

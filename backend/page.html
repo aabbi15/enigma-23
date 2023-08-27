@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Montserrat, sans-serif;
+            background-color: #071e34;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .card {
+            width: 16rem;
+            background-color: #20354b;
+            border-radius: 1rem;
+            padding: 1rem;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .timestamp {
+            display: flex;
+            justify-content: space-between;
+            color: #ccc;
+            font-size: 0.875rem;
+        }
+
+        .status-icon {
+            color: #1de9b6;
+        }
+
+        .profile-image {
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-image img {
+            width: 7rem;
+            height: 7rem;
+            border-radius: 50%;
+        }
+
+        .profile-name {
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.25rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .profile-status {
+            color: #1de9b6;
+            font-weight: bold;
+            font-size: 1rem;
+            text-align: center;
+            margin-top: 0.625rem;
+        }
+
+        .progress-bar {
+            height: 0.25rem;
+            width: 100%;
+            background-color: #000;
+            border-radius: 0.125rem;
+            margin-top: 1rem;
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 40%;
+            background-color: #ffca28;
+            border-radius: 0.125rem;
+        }
+
+        .storage-info {
+            color: #fff;
+            font-size: 0.875rem;
+            text-align: right;
+            margin-top: 0.375rem;
+        }
+
+        .storage-label {
+            font-weight: bold;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="timestamp">
+            <span>2d ago</span>
+            <span class="status-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z" />
+                </svg>
+            </span>
+        </div>
+        <div class="profile-image">
+            <img src="https://api.lorem.space/image/face?w=120&h=120&hash=bart89fe" alt="profile picture">
+        </div>
+        <div class="profile-name">
+            Jonathan <br/> Smith
+        </div>
+        <p class="profile-status">
+            Active
+        </p>
+        <div class="progress-bar">
+            <div class="progress-fill"></div>
+        </div>
+        <div class="storage-info">
+            <span class="storage-label">Storage:</span>
+            <span>40%</span>
+        </div>
+    </div>
+</body>
+</html>

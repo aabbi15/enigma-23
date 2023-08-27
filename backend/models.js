@@ -163,6 +163,43 @@ const DoctorSchema = new Schema({
 
 },{timestamps: true})
 
+const drassign = new Schema({
+    firstname:{
+        type:String,
+        required:true
+        
+    },
+    lastname : {
+        type: String,
+        required:true
+    },
+    date:{
+        type: String,
+        required:true
+    },
+    time:{
+        type: String,
+        required:true
+    },
+    modeofconsultation:{
+        type: String,
+        required:true
+    },
+    notes:{
+        type: String,
+        required:true
+    },
+    
+
+},{timestamps: true})
+
+
+
+
+
+
+
+
 
 
 const User = mongoose.model('User',UserSchema);
@@ -170,5 +207,5 @@ const Hospital = mongoose.model('Hospital',HospitalSchema);
 const Lab = mongoose.model('Lab',LabSchema);
 const Request = mongoose.model('Request',RequestSchema);
 const Doctor = mongoose.model('Doctor',DoctorSchema);
-
-module.exports = {User,Hospital,Lab,Request,Dcotor};
+const DrAssign=mongoose.model('DrAssign',DrAssignSchema);
+module.exports = {User,Hospital,Lab,Request,Doctor,DrAssign};

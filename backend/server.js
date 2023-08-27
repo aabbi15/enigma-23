@@ -10,7 +10,7 @@ const cookieParser = require('cookie-parser');
 
 const app = express();
 const port = 5173;
-const { User, Problem, Submission } = require('./models.js');
+const { User, Problem, Submission, DrAssign } = require('./models.js');
 
 
 const mongoURL = "mongodb+srv://abhishekabbiwork:enigma@enigma.prmugjv.mongodb.net/";
@@ -385,10 +385,38 @@ app.get("/submission/:submissionid",auth,async (req,res) => {
 
 
 app.get('/hospital/assign', (req, res) => {
+
+
   res.send('Hello World!');
 });
 app.post('/hospital/assign',(req,res) =>{
-  res.send('Hello World!');
+
+  const firstname = req.body.firstname;
+  const lastname = req.body.lastname;
+  const date=req.body.date;
+  const time=req.body.time;
+  const modeofconsultation=req.body.modeofconsultation;
+  const notes=req.body.notes;
+
+  const NewUser = new DrAssign({
+    firstname,
+    lastname,
+    date,
+    time,
+    modeofconsultation,
+    notes,
+
+
+  })
+  NewUser.save()
+    .then(result => {
+      console.log("Sign up done");
+      
+    })
+    .catch(err => {
+      res.send(err);
+    })
+
 });
 
 
@@ -459,7 +487,7 @@ app.post('/login',(req,res) =>{
 app.get('/signup/hospital', (req, res) => {
   res.send('Hello World!');
 });
-app.post('/signup/hospital',(req,res) =>{
+app.post('/signup/hospital',async (req,res) =>{
   const name = req.body.name;
   const email = req.body.email;
   const password = req.body.password;
@@ -468,15 +496,39 @@ app.post('/signup/hospital',(req,res) =>{
   const pincode = req.body.pincode;
   const address = req.body.address;
   
-  
-  
 
 
   if (!email || !password||!name||!state||!city||!pincode||!address) {
     res.status(400).json({ msg: 'Missing input' })
     return;
   }
-  res.send('Hello World!');
+  let alreadyexist=await User.findOne({ email: email });
+
+  if (alreadyexist) {
+    res.status(409).json({ msg: 'This email already exists' })
+    return;
+  }
+
+  const NewUser = new Hospital({
+    name,
+    email,
+    password,
+    state,
+    city,
+    pincode,
+    address,
+
+  })
+  NewUser.save()
+    .then(result => {
+      console.log("Sign up done");
+      
+    })
+    .catch(err => {
+      res.send(err);
+    })
+
+  // res.send('Hello World!');
 });
 
 
@@ -511,7 +563,7 @@ app.post('/signup/laboratory',(req,res) =>{
 app.get('/signup/patient', (req, res) => {
   res.send('Hello World!');
 });
-app.post('/signup/patient',(req,res) =>{
+app.post('/signup/patient',async (req,res) =>{
   const name = req.body.name;
   const email = req.body.email;
   const password = req.body.password;
@@ -526,7 +578,38 @@ app.post('/signup/patient',(req,res) =>{
     res.status(400).json({ msg: 'Missing input' })
     return;
   }
-  res.send('Hello World!');
+  let alreadyexist = await User.findOne({ email: email });
+
+
+
+  if (alreadyexist) {
+
+    res.status(409).json({ msg: 'This email already exists' })
+    return;
+  }
+  const NewUser = new Lab({
+    name,
+    email,
+    password,
+    age,
+    gender,
+    bloodgroup,
+    address,
+
+
+  })
+  NewUser.save()
+  .then(result => {
+    console.log("Sign up done");
+    
+  })
+  .catch(err => {
+    res.send(err);
+  })
+
+
+
+
 });
 
 
@@ -542,7 +625,34 @@ app.post('/user/myrequests',(req,res) =>{
 
 
 app.post('/user/newrequests',(req,res) =>{
-  res.send('Hello World!');
+  const title = req.body.title;
+  const height = req.body.height;
+  const weight= req.body.weight;
+  const body= req.body.body;
+
+
+
+  const NewUser = new Request({
+    title,
+    height,
+    weight,
+    body,
+
+
+  })
+
+  NewUser.save()
+    .then(result => {
+      console.log("Data input successfull");
+      
+    })
+    .catch(err => {
+      res.send(err);
+    })
+
+
+
+  // res.send('Hello World!');
 });
 app.get('/user/newrequests', (req, res) => {
   res.send('Hello World!');

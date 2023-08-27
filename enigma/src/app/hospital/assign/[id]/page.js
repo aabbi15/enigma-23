@@ -1,7 +1,58 @@
+'use client'
+ 
+import { useParams } from 'next/navigation'
+import { useState,useEffect } from 'react';
+
+
 import Image from 'next/image'
 import Header from '../../../header.js'
 import Footer from '../../../footer.js';
 export default function Home() {
+  const [date, Setdate] = useState('');
+	const [time,Settime] = useState('');
+	const [ notes,Setnotes] = useState('');
+
+  function handleAssign(){
+    const info = {
+      first_name:first_name,
+      last_name:last_name,
+      date:date,
+      time:time,
+      notes:notes
+    }
+
+    fetch ("http://localhost:5173/hospital/assign/:id", {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(info)
+    }).then(
+      (response) => {
+       console.log("fetched");
+       return response.json();
+      
+      }).then(data => {
+        if(data.status!=200){
+          Setsendalert(data.msg);
+         }
+         else{
+          Setsendalert('');
+          
+         }
+        if(data.url) {
+          console.log(data.url);
+          window.location.replace(data.url);
+         }
+         else console.log(data);
+        }
+      ).catch(
+      err=>{
+        console.log(err.msg);
+      }
+    )
+    
+
+    
+  }
 	return (
 		<div class='mymain'>
 
@@ -23,12 +74,12 @@ export default function Home() {
 
             <div className='col-span-1'>
                 <label class="text-white " for="passwordConfirmation">Date of Consultation</label>
-                <input id="date" type="date" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md  focus:border-blue-500 focus:outline-none focus:ring"/>
+                <input value={date} onChange={(e) => Setdate(e.target.value)} id="date" type="date" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md  focus:border-blue-500 focus:outline-none focus:ring"/>
             </div>
 
             <div className='col-span-1'>
                 <label class="text-white " for="passwordConfirmation">Time of Consultation</label>
-                <input id="time" type="time" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md  focus:border-blue-500 focus:outline-none focus:ring"/>
+                <input value={time} onChange={(e) => Settime(e.target.value)} id="time" type="time" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md  focus:border-blue-500 focus:outline-none focus:ring"/>
             </div>
 
             <div className='col-span-2'>
@@ -50,7 +101,7 @@ export default function Home() {
 
             <div className='col-span-2'>
                 <label class="text-white " for="passwordConfirmation">Extra Notes</label>
-                <textarea id="textarea" type="textarea" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md  focus:border-blue-500  focus:outline-none focus:ring"></textarea>
+                <textarea value={notes} onChange={(e) => Setnotes(e.target.value)}id="textarea" type="textarea" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md  focus:border-blue-500  focus:outline-none focus:ring"></textarea>
             </div>
             <div className='col-span-2'>
                 <label class="block text-sm font-medium text-white">

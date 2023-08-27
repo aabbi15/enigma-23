@@ -1,5 +1,7 @@
 "use client"
 import { useState } from 'react';
+import cities from 'C:/Users/abhis/OneDrive/Desktop/enigma-23/data/cities.json' assert { type: 'json' };
+
 
 
 import Image from 'next/image'
@@ -12,9 +14,9 @@ export default function Home() {
     const [address,Setaddress] = useState('');
     const [email,Setemail] = useState('');
     const [password,Setpassword] = useState('');
-    const [currCity,SetcurrCity] = useState('');
+    const [currState, SetcurrState] = useState('Andaman and Nicobar Islands');
+    const [currCity, SetcurrCity] = useState('Port Blair');
     const [pincode,Setpincode] = useState('');
-    const [currState,SetcurrState] = useState('');
     const [sendalert, Setsendalert] = useState('wow');
     const alert = () => {
 
@@ -36,6 +38,39 @@ export default function Home() {
                 <></>
             )
         }
+    }
+
+    function statemenu(){
+        const statelist=[]
+        for(const state in cities){
+            statelist.push(<option value={state}>{state}</option>);
+
+        }
+        return statelist;
+            
+           
+            
+
+        
+    }
+
+    const handleStateChange= (event) =>{
+        SetcurrState(event.target.value);   
+        SetcurrCity(cities[currState][0])
+        
+    };
+
+    function citymenu(){
+        const citylist=[];
+        const statenew = currState;
+        for(const city of cities[statenew]){
+            citylist.push(<option value={city}>{city}</option>);
+        }
+        return citylist;
+           
+            
+
+        
     }
 
     async function handleSignup() {
@@ -105,28 +140,32 @@ export default function Home() {
                                     <div class="lg:col-span-2">
                                         <div class="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-5">
                                             <div class="md:col-span-5">
-                                                <label for="full_name">Laboratory Name</label>
-                                                <input type="text" name="full_name" id="full_name" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50"  placeholder="Krishna Labs" />
+                                                <label for="full_name">Lab Name</label>
+                                                <input value={name} onChange={(e) => Setname(e.target.value)} type="text" name="full_name" id="full_name" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50"  placeholder="Anand Labs" />
                                             </div>
 
                                             <div class="md:col-span-5">
                                                 <label for="email">Email Address</label>
-                                                <input type="text" name="email" id="email" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50"   placeholder="email@domain.com" />
+                                                <input value={email} onChange={(e) => Setemail(e.target.value)} type="text" name="email" id="email" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50"   placeholder="email@domain.com" />
                                             </div>
 
                                             <div class="md:col-span-5">
                                                 <label for="address">Address</label>
-                                                <input type="text" name="address" id="address" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50"   placeholder="My Adress" />
+                                                <input value={address} onChange={(e) => Setaddress(e.target.value)} type="text" name="address" id="address" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50"   placeholder="My Adress" />
                                             </div>
 
                                             <div class="md:col-span-5">
                                                 <label for="address">Password</label>
-                                                <input type="text" name="password" id="password" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50"   placeholder="Enter your password " />
+                                                <input value={password} onChange={(e) => Setpassword(e.target.value)} type="text" name="password" id="password" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50"   placeholder="Enter your password " />
                                             </div>
 
                                             <div class="md:col-span-3">
                                                 <label for="city">City</label>
-                                                <input type="text" name="city" id="city" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50"   placeholder="" />
+                                                <div class="h-10 bg-gray-50 flex border border-gray-200 rounded items-center mt-1">
+                                                <select onChange={(e)=>SetcurrCity(e.target.value)} className='w-full bg-gray-50'>
+                                                        {citymenu()}
+                                                    </select>
+                                                    </div>
                                             </div>
 
 
@@ -134,28 +173,26 @@ export default function Home() {
                                             <div class="md:col-span-2">
                                                 <label for="state">State</label>
                                                 <div class="h-10 bg-gray-50 flex border border-gray-200 rounded items-center mt-1">
-                                                    <input name="state" id="state" placeholder="State" class="px-4 appearance-none outline-none text-gray-800 w-full bg-transparent"   />
-
+                                                    <select   onChange={handleStateChange} className='w-full bg-gray-50'>
+                                                        {statemenu()}
+                                                    </select>
                                                 </div>
                                             </div>
 
                                             <div class="md:col-span-2">
                                                 <label for="zipcode">Zipcode</label>
-                                                <input type="text" name="zipcode" id="zipcode" class="transition-all flex items-center h-10 border mt-1 rounded px-4 w-full bg-gray-50" placeholder="390015"   />
+                                                <input value={pincode} onChange={(e) => Setpincode(e.target.value)} type="text" name="zipcode" id="zipcode" class="transition-all flex items-center h-10 border mt-1 rounded px-4 w-full bg-gray-50" placeholder="390015"   />
                                             </div>
 
                                             <div className='md:col-span-3'></div>
 
-                                            <div class="md:col-span-3">
-                                                <label for="dr">Number of Equipments[total] </label>
-                                                <input type="text" name="dr" id="dr" class="transition-all flex items-center h-10 border mt-1 rounded px-4 w-full bg-gray-50" placeholder=""   />
-                                            </div>
-
                                             
+
+                                       
                                             
 
                                            
-                                            <div className="md:col-span-5 m-4 ">
+                                            <div className="md:col-span-5 m-4">
                                                     {alert()}
                                             </div>
                                             
@@ -183,5 +220,4 @@ export default function Home() {
 
 
     );
-
 }

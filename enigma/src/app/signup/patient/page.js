@@ -50,8 +50,8 @@ export default function Home() {
 
     function citymenu(){
         const citylist=[];
-        const statenew = currState;
-        for(const city of cities[statenew]){
+        
+        for(const city of cities[currState]){
             citylist.push(<option value={city}>{city}</option>);
         }
         return citylist;

@@ -10,7 +10,7 @@ const cookieParser = require('cookie-parser');
 
 const app = express();
 const port = 5173;
-const { User, Problem, Submission, DrAssign } = require('./models.js');
+const {User,Hospital,Lab,Request,Doctor,Hospitalform,Laboratoryform} = require('./models.js');
 
 
 const mongoURL = "mongodb+srv://abhishekabbiwork:enigma@enigma.prmugjv.mongodb.net/";
@@ -23,6 +23,9 @@ mongoose.connect(mongoURL).then(
     console.log(err);
   }
 );
+
+
+
 
 
 app.use(express.json());
@@ -80,6 +83,7 @@ app.get('/authorize',auth,async (req,res) => {
   
 
 })
+
 app.get("/", (req, res) => {
   res.json({ msg: "hello world" });
 
@@ -134,102 +138,7 @@ app.post('/signup/patient', async function (req, res) {
 
 })
 
-app.post('/signup/hospital', async function (req, res) {
 
-  const name = req.body.name;
-  const email = req.body.email;
-  const password = req.body.password;
-  const state = req.body.state;
-  const city = req.body.city;
-  const pincode = req.body.pincode;
-  const address = req.body.address;
-  
-  
-
-
-  if (!email || !password||!name||!state||!city||!pincode||!address) {
-    res.status(400).json({ msg: 'Missing input' })
-    return;
-  }
-
-  let alreadyexist = await User.findOne({ email: email });
-
-
-
-  if (alreadyexist) {
-
-    res.status(409).json({ msg: 'This email already exists' })
-    return;
-  }
-  const NewUser = new User({
-    name,
-    email,
-    password,
-
-
-  })
-
-  NewUser.save()
-    .then(result => {
-      console.log("Sign up done");
-      res.json({url: 'http://localhost:3000/login'});
-    })
-    .catch(err => {
-      res.send(err);
-    })
-
-  //  res.status(200).json({msg:'Sign up succesful'})
-
-})
-
-
-app.post('/signup/laboratory', async function (req, res) {
-
-  const name = req.body.name;
-  const email = req.body.email;
-  const password = req.body.password;
-  const state = req.body.state;
-  const city = req.body.city;
-  const pincode = req.body.pincode;
-  const address = req.body.address;
-  
-  
-
-
-  if (!email || !password||!name||!state||!city||!pincode||!address) {
-    res.status(400).json({ msg: 'Missing input' })
-    return;
-  }
-
-  let alreadyexist = await User.findOne({ email: email });
-
-
-
-  if (alreadyexist) {
-
-    res.status(409).json({ msg: 'This email already exists' })
-    return;
-  }
-  const NewUser = new User({
-    name,
-    email,
-    password,
-
-
-  })
-
-  NewUser.save()
-    .then(result => {
-      console.log("Sign up done");
-      res.json({url: 'http://localhost:3000/login'});
-    })
-    .catch(err => {
-      res.send(err);
-    })
-
-  //  res.status(200).json({msg:'Sign up succesful'})
-
-})
 
 app.get('/signup', (req, res) => {
   res.send('GET request to signup endpoint successful!');
@@ -265,7 +174,7 @@ app.post('/login', async function (req, res) {
 
   if (curruser[0]) {
     curruser = curruser[0].toJSON();
-    if (curruser.password != password) {
+    if (curruser.password != password || curruser.type !=type) {
       res.status(409).json({ msg: 'Wrong email or password' })
       return;
     }
@@ -302,83 +211,11 @@ app.get("/user/me", auth, async (req, res) => {
 
 })
 
-app.post("/user/",auth,async function(req, res) {
-  const isCorrect = Math.random() <0.5;
-  const no = req.params.probid;
-  const submission = req.body.submission;
-  const userid = req.body.userid;
-  const status = isCorrect?"ac" : "nac";
-  const msg = req.body.msg;
-
-  if(msg=="no"){
-    res.json({msg:msg});
-    return;
-  }
-  else{
 
 
-  response = await Problem.findOne({no:no});
-    
-  const data = response;
-  const name= data.name;
-  
-     
-
-   const newsubmission= new Submission({
-    no,
-    name,
-    userid,
-    submission,
-    status,
-    
-   });
 
 
-   newsubmission.save().then(result =>{
-    res.json({submission,msg:"submitted",url:`http://localhost:3000/submission/${newsubmission._id}`});
-   }).catch(err=>console.log(err));
-  }
-    
-});
 
-app.get("/submissions",auth,async (req,res) => {
-  const userid = req.body.userid;
-  const msg = req.body.msg;
-  
-  // console.log(userid + "userid");
-  let usersubmission = await Submission.find({userid : userid});
-
-  
-    
-  
-  
-  if(!usersubmission){
-    res.json({msg:"No user submissions found"});
-  }
-  
-  res.json(
-    
-    usersubmission  )
-});
-
-app.get("/submission/:submissionid",auth,async (req,res) => {
-  const userid = req.body.userid;
-  const submissionid = req.params.submissionid;
-  
-  let usersubmission = await Submission.findById(submissionid).limit(1);
-
-  
-    
-  
-  
-  if(!usersubmission){
-    res.json({msg:"No user submissions found"});
-  }
-  
-  res.json(
-    
-    usersubmission  )
-});
 
 
 
@@ -422,7 +259,7 @@ app.post('/hospital/assign',(req,res) =>{
 
 
 
-app.get('/hospital/myrequests', (req, res) => {
+app.get('/hospital/myrequests',auth, (req, res) => {
   res.send('Hello World!');
 
 });
@@ -467,26 +304,67 @@ app.get('/laboratory/submitreport', (req, res) => {
 
 
 
-app.get('/login', (req, res) => {
-  res.send('Hello World!');
-});
-app.post('/login',(req,res) =>{
-  res.send('Hello World!');
-});
+
+
 
 
 app.get('/', (req, res) => {
   res.send('Hello World!');
 });
-app.post('/login',(req,res) =>{
-  res.send('Hello World!');
+
+
+app.post('/login', async function (req, res) {
+
+  const email = req.body.email;
+  const password = req.body.password;
+  const type = req.body.type;
+
+  if (!email || !password) {
+    res.status(400).json({ msg: 'Missing input' })
+    return;
+  }
+  let curruser=[];
+ if(type=="patient"){
+  curruser = await User.find({ email: email }).limit(1);
+ }
+ if(type=="hospital"){
+   curruser = await Hospital.find({ email: email }).limit(1);
+ }
+ if(type=="laboratory"){
+   curruser = await Lab.find({ email: email }).limit(1);
+ }
+ 
+
+
+  if (!curruser[0]) {
+    res.status(404).json({ msg: 'Email not found' })
+
+    return;
+  }
+
+  if (curruser[0]) {
+    curruser = curruser[0].toJSON();
+    if (curruser.password != password) {
+      res.status(409).json({ msg: 'Wrong email or password' })
+      return;
+    }
+    else{
+      const token = jwt.sign(curruser, MY_KEY);
+
+
+      res.cookie('authorization', token, { httpOnly: true , sameSite: 'Lax' });
+      return res.json({url: 'http://localhost:3000/',token});
+    }
+  }
+  
+    
+  
+
 });
 
 
 
-app.get('/signup/hospital', (req, res) => {
-  res.send('Hello World!');
-});
+
 app.post('/signup/hospital',async (req,res) =>{
   const name = req.body.name;
   const email = req.body.email;
@@ -521,7 +399,7 @@ app.post('/signup/hospital',async (req,res) =>{
   })
   NewUser.save()
     .then(result => {
-      console.log("Sign up done");
+      console.log(result);
       
     })
     .catch(err => {
@@ -546,6 +424,8 @@ app.post('/signup/laboratory',(req,res) =>{
   const city = req.body.city;
   const pincode = req.body.pincode;
   const address = req.body.address;
+  const type = req.body.type;
+
 
   
   
@@ -555,6 +435,30 @@ app.post('/signup/laboratory',(req,res) =>{
     res.status(400).json({ msg: 'Missing input' })
     return;
   }
+
+
+
+  const NewUser = new Lab({
+    name,
+    email,
+    password,
+    city,
+    state,
+    pincode,
+    address,
+    type
+    
+
+
+  })
+  NewUser.save()
+  .then(result => {
+    console.log("result");
+    
+  })
+  .catch(err => {
+    res.send(err);
+  })
   res.send('Hello World!');
 });
 
@@ -571,6 +475,10 @@ app.post('/signup/patient',async (req,res) =>{
   const gender = req.body.gender;
   const bloodgroup = req.body.bloodgroup;
   const address = req.body.address;
+  const type = req.body.type;
+  const city = req.body.city;
+  const state = req.body.state;
+
   
 
 
@@ -582,12 +490,13 @@ app.post('/signup/patient',async (req,res) =>{
 
 
 
+
   if (alreadyexist) {
 
     res.status(409).json({ msg: 'This email already exists' })
     return;
   }
-  const NewUser = new Lab({
+  const NewUser = new User({
     name,
     email,
     password,
@@ -595,6 +504,11 @@ app.post('/signup/patient',async (req,res) =>{
     gender,
     bloodgroup,
     address,
+
+    city,
+    pincode,
+    state
+    
 
 
   })
@@ -614,8 +528,25 @@ app.post('/signup/patient',async (req,res) =>{
 
 
 
-app.get('/user/myrequests', (req, res) => {
-  res.send('Hello World!');
+app.get('/user/myrequests', async (req, res) => {
+  const userid = req.body.userid;
+  const msg = req.body.msg;
+  
+  // console.log(userid + "userid");
+  let usersubmission = await Request.find({userid : userid});
+
+  
+    
+  
+  
+  if(!usersubmission){
+    res.json({msg:"No user submissions found"});
+  }
+  
+  res.json(
+    
+    usersubmission  )
+  
 });
 
 app.post('/user/myrequests',(req,res) =>{

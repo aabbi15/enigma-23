@@ -32,6 +32,18 @@ const UserSchema = new Schema({
         type: String,
         required:true
     },
+    city:{
+        type: String,
+        required:true
+    },
+    pincode:{
+        type: Number,
+        required:true
+    },
+    state:{
+        type: String,
+        required:true
+    },
 
 },{timestamps: true})
 
@@ -163,17 +175,13 @@ const DoctorSchema = new Schema({
 
 },{timestamps: true})
 
-const drassign = new Schema({
-    firstname:{
+const HospitalformSchema = new Schema({
+    first_name:{
         type:String,
         required:true
         
     },
-    lastname : {
-        type: String,
-        required:true
-    },
-    date:{
+    last_name : {
         type: String,
         required:true
     },
@@ -181,23 +189,48 @@ const drassign = new Schema({
         type: String,
         required:true
     },
-    modeofconsultation:{
+    date:{
         type: String,
         required:true
     },
-    notes:{
+    extra:{
         type: String,
         required:true
     },
+    mode:{
+        type: String,
+        required:true
+    }
+},{timestamps: true})
+ 
+ const LaboratoryformSchema = new Schema({
+    name:{
+        type:String,
+        required:true
+        
+    },
+
+    time:{
+        type: String,
+        required:true
+    },
+    date:{
+        type: String,
+        required:true
+    },
+    extra:{
+        type: String,
+        required:true
+    },
+    image: {
+    type: Buffer,
+    required: true,
+  },
+    
+   
     
 
 },{timestamps: true})
-
-
-
-
-
-
 
 
 
@@ -207,5 +240,8 @@ const Hospital = mongoose.model('Hospital',HospitalSchema);
 const Lab = mongoose.model('Lab',LabSchema);
 const Request = mongoose.model('Request',RequestSchema);
 const Doctor = mongoose.model('Doctor',DoctorSchema);
-const DrAssign=mongoose.model('DrAssign',DrAssignSchema);
-module.exports = {User,Hospital,Lab,Request,Doctor,DrAssign};
+const Hospitalform = mongoose.model('Hospitalform',HospitalformSchema);
+const Laboratoryform = mongoose.model('Laboratoryform',LaboratoryformSchema);
+
+
+module.exports = {User,Hospital,Lab,Request,Doctor,Hospitalform,Laboratoryform};

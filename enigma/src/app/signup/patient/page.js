@@ -1,5 +1,6 @@
 "use client"
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
+import cities from 'C:/Users/abhis/OneDrive/Desktop/enigma-23/data/cities.json' assert { type: 'json' };
 
 
 import Image from 'next/image'
@@ -11,7 +12,58 @@ export default function Home() {
     const [name, Setname] = useState('');
     const [email, Setemail] = useState('');
     const [password, Setpassword] = useState('');
+    const [zipcode, Setzipcode] = useState('');
+    const [age, Setage] = useState();
+    const [gender,Setgender] = useState('');
+    const [bloodgroup,Setbloodgroup] = useState('');
+    const [address,Setaddress] = useState('');
+
     const [sendalert, Setsendalert] = useState('wow');
+    const [currState, SetcurrState] = useState('Andaman and Nicobar Islands');
+    const [currCity, SetcurrCity] = useState('Port Blair');
+
+
+
+
+    
+    
+
+    function statemenu(){
+        const statelist=[]
+        for(const state in cities){
+            statelist.push(<option value={state}>{state}</option>);
+
+        }
+        return statelist;
+            
+           
+            
+
+        
+    }
+
+    const handleStateChange= (event) =>{
+        SetcurrState(event.target.value);   
+        SetcurrCity(cities[currState][0])
+        
+    };
+
+    function citymenu(){
+        const citylist=[];
+        const statenew = currState;
+        for(const city of cities[statenew]){
+            citylist.push(<option value={city}>{city}</option>);
+        }
+        return citylist;
+           
+            
+
+        
+    }
+    
+
+    
+    
     const alert = () => {
 
         if (sendalert) {
@@ -34,13 +86,52 @@ export default function Home() {
         }
     }
 
-    async function handleSignup() {
-        const user = {
-            name: name,
-            email: email,
-            password: password
+  async function handleSignup(){
+      const user = {
+        name:name,
+        email:email,
+        password:password,
+        zipcode:zipcode,
+        age:age,
+        address:address,
+        gender:gender,
+        bloodgroup:bloodgroup,
+        city:currCity,
+        state:currState
+
+      }
+       
+      fetch ("http://localhost:5173/signup/patient", {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(user)
+      }).then(
+        (response) => {
+         console.log("fetched");
+         return response.json();
+        
+        }).then(data => {
+          if(data.status!=200){
+            Setsendalert(data.msg);
+           }
+           else{
+            Setsendalert('');
+            
+           }
+          if(data.url) {
+            console.log(data.url);
+            window.location.replace(data.url);
+           }
+           else console.log(data);
+          }
+        ).catch(
+        err=>{
+          console.log(err.msg);
         }
+      )
     }
+
+    
     return (
         <div class='mymain'>
 
@@ -64,27 +155,31 @@ export default function Home() {
                                         <div class="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-5">
                                             <div class="md:col-span-5">
                                                 <label for="full_name">Full Name</label>
-                                                <input type="text" name="full_name" id="full_name" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50"  placeholder="Steve Rogers" />
+                                                <input type="text" name="full_name" id="full_name" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" placeholder="Steve Rogers" />
                                             </div>
 
                                             <div class="md:col-span-5">
                                                 <label for="email">Email Address</label>
-                                                <input type="text" name="email" id="email" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50"   placeholder="email@domain.com" />
+                                                <input type="text" name="email" id="email" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" placeholder="email@domain.com" />
                                             </div>
 
                                             <div class="md:col-span-5">
                                                 <label for="address">Address</label>
-                                                <input type="text" name="address" id="address" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50"   placeholder="My Adress" />
+                                                <input type="text" name="address" id="address" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" placeholder="My Adress" />
                                             </div>
 
                                             <div class="md:col-span-5">
                                                 <label for="address">Password</label>
-                                                <input type="text" name="password" id="password" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50"   placeholder="Enter your password " />
+                                                <input type="text" name="password" id="password" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" placeholder="Enter your password " />
                                             </div>
 
                                             <div class="md:col-span-3">
                                                 <label for="city">City</label>
-                                                <input type="text" name="city" id="city" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50"   placeholder="" />
+                                                <div class="h-10 bg-gray-50 flex border border-gray-200 rounded items-center mt-1">
+                                                <select onChange={(e)=>SetcurrCity(e.target.value)} className='w-full bg-gray-50'>
+                                                        {citymenu()}
+                                                    </select>
+                                                    </div>
                                             </div>
 
 
@@ -92,66 +187,67 @@ export default function Home() {
                                             <div class="md:col-span-2">
                                                 <label for="state">State</label>
                                                 <div class="h-10 bg-gray-50 flex border border-gray-200 rounded items-center mt-1">
-                                                    <input name="state" id="state" placeholder="State" class="px-4 appearance-none outline-none text-gray-800 w-full bg-transparent"   />
-
+                                                    <select   onChange={handleStateChange} className='w-full bg-gray-50'>
+                                                        {statemenu()}
+                                                    </select>
                                                 </div>
                                             </div>
 
                                             <div class="md:col-span-2">
                                                 <label for="zipcode">Zipcode</label>
-                                                <input type="text" name="zipcode" id="zipcode" class="transition-all flex items-center h-10 border mt-1 rounded px-4 w-full bg-gray-50" placeholder="390015"   />
+                                                <input type="text" name="zipcode" id="zipcode" class="transition-all flex items-center h-10 border mt-1 rounded px-4 w-full bg-gray-50" placeholder="390015" />
                                             </div>
 
                                             <div className='md:col-span-3'></div>
 
                                             <div class="md:col-span-3">
                                                 <label for="zipcode">Blood Group</label>
-                                                <input type="text" name="blood" id="blood" class="transition-all flex items-center h-10 border mt-1 rounded px-4 w-full bg-gray-50" placeholder=""   />
+                                                <input type="text" name="blood" id="blood" class="transition-all flex items-center h-10 border mt-1 rounded px-4 w-full bg-gray-50" placeholder="" />
                                             </div>
 
                                             <div class="md:col-span-2">
                                                 <label for="zipcode">Age</label>
-                                                <input type="text" name="age" id="age" class="transition-all flex items-center h-10 border mt-1 rounded px-4 w-full bg-gray-50" placeholder=""   />
+                                                <input type="text" name="age" id="age" class="transition-all flex items-center h-10 border mt-1 rounded px-4 w-full bg-gray-50" placeholder="" />
                                             </div>
-                                            
+
 
                                             <div class="md:col-span-3 flex  items-center justify-evenly">
                                                 <label for="gender" className='mr-4 font-semibold'>Gender</label>
                                                 <div>
-                                                <input
-                                                    type="radio"
-                                                    id="male"
-                                                    name="gender"
-                                                    value="male"
-                                                    className="form-radio h-4 w-4 text-blue-500"
-                                                />
-                                                <label htmlFor="male" className="">Male</label>
-                                            </div>
-                                            <div className="flex items-center ">
-                                                <input
-                                                    type="radio"
-                                                    id="female"
-                                                    name="gender"
-                                                    value="female"
-                                                    className="form-radio h-4 w-4 text-pink-500"
-                                                />
-                                                <label htmlFor="female" className="">Female</label>
-                                            </div>
-                                            <div className="flex items-center">
-                                                <input
-                                                    type="radio"
-                                                    id="other"
-                                                    name="gender"
-                                                    value="other"
-                                                    className="form-radio h-4 w-4 text-purple-500"
-                                                />
-                                                <label htmlFor="other" className="mr-2">Other</label>
-                                            </div>
+                                                    <input
+                                                        type="radio"
+                                                        id="male"
+                                                        name="gender"
+                                                        value="male"
+                                                        className="form-radio h-4 w-4 text-blue-500"
+                                                    />
+                                                    <label htmlFor="male" className="">Male</label>
+                                                </div>
+                                                <div className="flex items-center ">
+                                                    <input
+                                                        type="radio"
+                                                        id="female"
+                                                        name="gender"
+                                                        value="female"
+                                                        className="form-radio h-4 w-4 text-pink-500"
+                                                    />
+                                                    <label htmlFor="female" className="">Female</label>
+                                                </div>
+                                                <div className="flex items-center">
+                                                    <input
+                                                        type="radio"
+                                                        id="other"
+                                                        name="gender"
+                                                        value="other"
+                                                        className="form-radio h-4 w-4 text-purple-500"
+                                                    />
+                                                    <label htmlFor="other" className="mr-2">Other</label>
+                                                </div>
                                             </div>
                                             <div className="md:col-span-5 m-4">
-                                                    {alert()}
+                                                {alert()}
                                             </div>
-                                            
+
 
 
                                             <div className="md:col-span-5 text-right  mr-6">

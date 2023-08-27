@@ -385,3 +385,127 @@ app.get("/submission/:submissionid",auth,async (req,res) => {
 app.listen(port, function () {
   console.log(`Example app listening on port ${port}`)
 })
+
+app.get('/hospital/assign', (req, res) => {
+  res.send('Hello World!');
+});
+app.post('/hospital/assign',(req,res) =>{
+  res.send('Hello World!');
+});
+
+
+
+
+app.get('/hospital/myrequests', (req, res) => {
+  res.send('Hello World!');
+
+});
+app.post('/hospital/myrequests',(req,res) =>{
+  res.send('Hello World!');
+});
+
+
+
+app.get('/hospital/requestdetails', (req, res) => {
+  res.send('Hello World!');
+});
+app.post('/hospital/requestdetails',(req,res) =>{
+  res.send('Hello World!');
+});
+
+
+
+app.post('/laboratory/requestdetails',(req,res) =>{
+  res.send('Hello World!');
+});
+app.get('/laboratory/requestdetails', (req, res) => {
+  res.send('Hello World!');
+});
+
+
+app.post('/laboratory/myrequests',(req,res) =>{
+  res.send('Hello World!');
+});
+app.get('/laboratory/myrequests', (req, res) => {
+  res.send('Hello World!');
+});
+
+
+
+app.post('/laboratory/submitreport',(req,res) =>{
+  res.send('Hello World!');
+});
+app.get('/laboratory/submitreport', (req, res) => {
+  res.send('Hello World!');
+});
+
+
+
+app.get('/login', (req, res) => {
+  res.send('Hello World!');
+});
+app.post('/login',(req,res) =>{
+  res.send('Hello World!');
+});
+
+
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
+app.post('/login',(req,res) =>{
+  res.send('Hello World!');
+});
+
+
+
+app.get('/signup/hospital', (req, res) => {
+  res.send('Hello World!');
+});
+app.post('/signup/hospital',(req,res) =>{
+  res.send('Hello World!');
+});
+
+
+
+app.get('/signup/laboratory', (req, res) => {
+  res.send('Hello World!');
+});
+app.post('/signup/laboratory',(req,res) =>{
+  res.send('Hello World!');
+});
+
+
+
+app.get('/signup/patient', (req, res) => {
+  res.send('Hello World!');
+});
+app.post('/signup/patient',(req,res) =>{
+  res.send('Hello World!');
+});
+
+
+
+app.get('/user/myrequests', (req, res) => {
+  res.send('Hello World!');
+});
+
+app.post('/user/myrequests',(req,res) =>{
+  res.send('Hello World!');
+});
+
+
+
+app.post('/user/newrequests',(req,res) =>{
+  res.send('Hello World!');
+});
+app.get('/user/newrequests', (req, res) => {
+  res.send('Hello World!');
+});
+
+
+app.post('/user/requestdetails',(req,res) =>{
+  res.send('Hello World!');
+});
+app.get('/user/requestdetails', (req, res) => {
+  res.send('Hello World!');
+});

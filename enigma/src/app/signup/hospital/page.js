@@ -8,10 +8,16 @@ import Footer from '@/app/footer.js';
 
 export default function Home() {
 
-    const [name, Setname] = useState('');
-    const [email, Setemail] = useState('');
-    const [password, Setpassword] = useState('');
-    const [sendalert, Setsendalert] = useState('wow');
+    const [name,Setname] = useState('');
+const [address,Setaddress] = useState('');
+const [email,Setemail] = useState('');
+const [password,Setpassword] = useState('');
+const [currCity,SetcurrCity] = useState('');
+const [pincode,Setpincode] = useState('');
+const [currState,SetcurrState] = useState('');
+const [sendalert, Setsendalert] = useState('wow');
+
+
     const alert = () => {
 
         if (sendalert) {
@@ -36,10 +42,48 @@ export default function Home() {
 
     async function handleSignup() {
         const user = {
-            name: name,
-            email: email,
-            password: password
+            name:name,
+            email:email,
+            password:password,
+            pincode:pincode,
+            
+            address:address,
+            
+            city:currCity,
+            state:currState,
+            type:"hospital"
+    
+          }
+
+          fetch ("http://localhost:5173/signup/hospital", {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(user)
+      }).then(
+        (response) => {
+         console.log("fetched");
+         return response.json();
+        
+        }).then(data => {
+          if(data.status!=200){
+            Setsendalert(data.msg);
+           }
+           else{
+            Setsendalert('');
+            
+           }
+          if(data.url) {
+            console.log(data.url);
+            window.location.replace(data.url);
+           }
+           else console.log(data);
+          }
+        ).catch(
+        err=>{
+          console.log(err.msg);
         }
+      )
+    
     }
     return (
         <div class='mymain'>
@@ -79,7 +123,7 @@ export default function Home() {
 
                                             <div class="md:col-span-5">
                                                 <label for="address">Password</label>
-                                                <input type="text" name="password" id="password" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50"   placeholder="Enter your password " />
+                                                <input value={password} onChange={(e) => Setpassword(e.target.value)} type="text" name="password" id="password" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50"   placeholder="Enter your password " />
                                             </div>
 
                                             <div class="md:col-span-3">

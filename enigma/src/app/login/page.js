@@ -8,6 +8,8 @@ import Footer from "../footer"
 export default function Login(){
 
     const [sendalert, Setsendalert] = useState('wow');
+	const [email,Setemail] = useState('');
+	const [ password,Setpassword] = useState('');
     const alert = () => {
 
         if (sendalert) {
@@ -29,6 +31,53 @@ export default function Login(){
             )
         }
     }
+
+	async function handleLogin(){
+      
+
+		const user = {
+		  
+		  email:email,
+		  password:password
+		}
+  
+  
+		 
+		fetch ("http://localhost:5173/login", {
+		  
+		  method: 'POST',
+		  headers: {'Content-Type': 'application/json',},
+		  body: JSON.stringify(user),
+		  withCredentials: true,
+		  credentials: 'include',
+		}).then(
+		  (response) => {
+		   console.log("fetched");
+		  
+		   return response.json();
+		   
+		  
+		  }).then(data => {
+			if(data.status!=200){
+			  Setsendalert(data.msg);
+			 }
+			 else{
+			  Setsendalert('');
+			  
+			 }
+			
+			 if(data.url) {
+			  console.log(data.url);
+			  window.location.replace(data.url);
+			 }
+			 else console.log(data);
+			})
+		  .catch(
+		  err=>{
+			console.log(err.msg);
+		  }
+		)
+	  }
    
     return(
         <div>

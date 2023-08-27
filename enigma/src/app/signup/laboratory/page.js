@@ -8,9 +8,13 @@ import Footer from '@/app/footer.js';
 
 export default function Home() {
 
-    const [name, Setname] = useState('');
-    const [email, Setemail] = useState('');
-    const [password, Setpassword] = useState('');
+    const [name,Setname] = useState('');
+    const [address,Setaddress] = useState('');
+    const [email,Setemail] = useState('');
+    const [password,Setpassword] = useState('');
+    const [currCity,SetcurrCity] = useState('');
+    const [pincode,Setpincode] = useState('');
+    const [currState,SetcurrState] = useState('');
     const [sendalert, Setsendalert] = useState('wow');
     const alert = () => {
 
@@ -36,10 +40,48 @@ export default function Home() {
 
     async function handleSignup() {
         const user = {
-            name: name,
-            email: email,
-            password: password
+            name:name,
+            email:email,
+            password:password,
+            pincode:pincode,
+            
+            address:address,
+            
+            city:currCity,
+            state:currState,
+            type: "laboratory"
+    
+          }
+
+          fetch ("http://localhost:5173/signup/laboratory", {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(user)
+      }).then(
+        (response) => {
+         console.log("fetched");
+         return response.json();
+        
+        }).then(data => {
+          if(data.status!=200){
+            Setsendalert(data.msg);
+           }
+           else{
+            Setsendalert('');
+            
+           }
+          if(data.url) {
+            console.log(data.url);
+            window.location.replace(data.url);
+           }
+           else console.log(data);
+          }
+        ).catch(
+        err=>{
+          console.log(err.msg);
         }
+      )
+    
     }
     return (
         <div class='mymain'>

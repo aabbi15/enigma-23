@@ -382,9 +382,7 @@ app.get("/submission/:submissionid",auth,async (req,res) => {
 
 
 
-app.listen(port, function () {
-  console.log(`Example app listening on port ${port}`)
-})
+
 
 app.get('/hospital/assign', (req, res) => {
   res.send('Hello World!');
@@ -462,6 +460,22 @@ app.get('/signup/hospital', (req, res) => {
   res.send('Hello World!');
 });
 app.post('/signup/hospital',(req,res) =>{
+  const name = req.body.name;
+  const email = req.body.email;
+  const password = req.body.password;
+  const state = req.body.state;
+  const city = req.body.city;
+  const pincode = req.body.pincode;
+  const address = req.body.address;
+  
+  
+  
+
+
+  if (!email || !password||!name||!state||!city||!pincode||!address) {
+    res.status(400).json({ msg: 'Missing input' })
+    return;
+  }
   res.send('Hello World!');
 });
 
@@ -470,7 +484,25 @@ app.post('/signup/hospital',(req,res) =>{
 app.get('/signup/laboratory', (req, res) => {
   res.send('Hello World!');
 });
+
+
 app.post('/signup/laboratory',(req,res) =>{
+  const name = req.body.name;
+  const email = req.body.email;
+  const password = req.body.password;
+  const state = req.body.state;
+  const city = req.body.city;
+  const pincode = req.body.pincode;
+  const address = req.body.address;
+
+  
+  
+
+
+  if (!email || !password||!name||!state||!city||!pincode||!address) {
+    res.status(400).json({ msg: 'Missing input' })
+    return;
+  }
   res.send('Hello World!');
 });
 
@@ -480,6 +512,20 @@ app.get('/signup/patient', (req, res) => {
   res.send('Hello World!');
 });
 app.post('/signup/patient',(req,res) =>{
+  const name = req.body.name;
+  const email = req.body.email;
+  const password = req.body.password;
+  const age = req.body.age;
+  const gender = req.body.gender;
+  const bloodgroup = req.body.bloodgroup;
+  const address = req.body.address;
+  
+
+
+  if (!email || !password||!name||!age||!gender||!bloodgroup||!address ){
+    res.status(400).json({ msg: 'Missing input' })
+    return;
+  }
   res.send('Hello World!');
 });
 
@@ -509,3 +555,8 @@ app.post('/user/requestdetails',(req,res) =>{
 app.get('/user/requestdetails', (req, res) => {
   res.send('Hello World!');
 });
+
+
+app.listen(port, function () {
+  console.log(`Example app listening on port ${port}`)
+})

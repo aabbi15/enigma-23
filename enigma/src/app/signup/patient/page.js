@@ -91,13 +91,14 @@ export default function Home() {
         name:name,
         email:email,
         password:password,
-        zipcode:zipcode,
+        pincode:pincode,
         age:age,
         address:address,
         gender:gender,
         bloodgroup:bloodgroup,
         city:currCity,
-        state:currState
+        state:currState,
+        type:"patient"
 
       }
        
@@ -131,7 +132,7 @@ export default function Home() {
       )
     }
 
-    
+
     return (
         <div class='mymain'>
 
@@ -252,7 +253,7 @@ export default function Home() {
 
                                             <div className="md:col-span-5 text-right  mr-6">
                                                 <div class="inline-flex ">
-                                                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Submit</button>
+                                                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded " onClick={handleSignup}>Submit</button>
                                                 </div>
                                             </div>
 

@@ -27,6 +27,13 @@ export default function Home() {
     <Header/>
 <div>
     
+
+
+
+
+
+
+
 </div>
   <Footer/>
 

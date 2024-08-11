@@ -1,0 +1,17 @@
+[
+    {
+        "data":
+        {
+            "name":"Kunj Bhuva",
+            "email":"appleeye894@gmail.com",
+            "password":"verygood89",
+            "age":18,
+            "gender":"Male",
+            "bloodgroup":"B+ve",
+            "address":"Kalakunj Avenue , Surat",
+            "city":"Surat",
+            "pincode":"395006",
+            "state":"Gujarat"
+        }
+    }
+]
